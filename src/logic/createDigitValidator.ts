@@ -3,6 +3,6 @@ export const DIGITS = '0123456789abcdef';
 export const createDigitValidator = (
   base: number,
 ): ((char: string) => boolean) => {
-  void base;
-  throw new Error('not implemented');
+  const alphabet = DIGITS.slice(0, base);
+  return (char) => char.length === 1 && alphabet.includes(char.toLowerCase());
 };
