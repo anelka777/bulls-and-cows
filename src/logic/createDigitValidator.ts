@@ -1,0 +1,8 @@
+export const DIGITS = '0123456789abcdef';
+
+export const createDigitValidator = (
+  base: number,
+): ((char: string) => boolean) => {
+  const alphabet = DIGITS.slice(0, base);
+  return (char) => char.length === 1 && alphabet.includes(char.toLowerCase());
+};
